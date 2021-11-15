@@ -1,0 +1,190 @@
+html{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 13px;
+    background-color: #F5F6F7;
+}
+
+input[type=text],input[type=password],input[type=email]{
+    border:none;
+    border-right:0px;
+    border-top:0px;
+    border-left:0px;
+    border-bottom:0px;
+    -webkit-appearance : none;
+-moz-appearance:none;
+appearance:none;
+}
+
+select {
+    width: 100%;
+    height: 80%;
+    margin: 0.2rem auto 0.2rem;
+    border:none;
+    border-right:0px;
+    border-top:0px;
+    border-left:0px;
+    border-bottom:0px;
+}
+
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    display:flex;
+    height: 10rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 3rem;
+    color: #00c850;
+    margin: 1rem;
+}
+
+.join-container {
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+} 
+
+.join-container form {
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    width: 36rem;
+}
+
+.join-container form section {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-row {
+    margin-bottom: 1rem;    
+}
+
+.join__title {
+    margin: 0.3em auto 0.3em;
+}
+
+.content-box {
+    display: block;
+    width: 100%;
+    height: 3.1rem;
+    border: 0.15rem solid #ededed;
+    margin: 0.2rem;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+.content-box input {
+    margin-top: 0.2rem;
+    margin-left: 0.6rem;
+    width:70%;
+    height: 80%;
+}
+
+.user-info__birth{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.user-info__birth span{
+    width:30%;
+}
+
+.user-info__birth span input{
+    width:7rem;
+    height: 80%;
+}
+
+.detail-agreement-content{
+    width: 100%;
+    border: 0.15rem solid #ededed;
+}
+
+.detail-agreement {
+    height: 10rem;
+    background-color: white;
+}
+
+/* .detail-agreement-content  */
+.close {
+    position: relative;
+    top: -2rem;
+    left: 33.7rem
+}
+
+.greenBtn {
+    border:none;
+    border-right:0px;
+    border-top:0px;
+    border-left:0px;
+    border-bottom:0px;
+    -webkit-appearance : none;
+    -moz-appearance:none;
+    appearance:none;
+    background-color: #03c75a;
+    color:white;
+    padding: 0.8rem 4rem 0.8rem
+    
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button-content * {
+    font-size: 1.5rem;
+    width: 48%;
+    margin: 0.5rem
+}
+
+/* TODO: 셀럭터 이름 수정 필요함.*/
+.green-line {
+    border-color: #03c75a;
+}
+
+/* .content-box:focus-within{ */
+    /* border-color: #03c75a; */
+/* } */
+
+._focus {
+    border: 0.15rem solid #03c75a;
+}
+
+._hide {
+    display: none
+}
+
+._visible {
+    display: block
+}
+/* .join-container form section *{
+    width: 20%;
+} */
