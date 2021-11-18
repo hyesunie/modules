@@ -1,4 +1,4 @@
-const CONTENT_BOX_SELECTOR = "content-box";
+const CONTENT_BOX_SELECTOR = ".content-box";
 
 export default class Join {
   idContainer = document.querySelector(".id-content");
@@ -59,8 +59,6 @@ export default class Join {
     const form = document.querySelector("form.join");
 
     form.addEventListener("focusin", (e) => {
-      console.log(e.target.tagName);
-
       if (e.target.tagName !== "INPUT") {
         return;
       }
@@ -69,21 +67,12 @@ export default class Join {
     });
 
     form.addEventListener("focusout", (e) => {
-      console.log(e.target.tagName);
-
       if (e.target.tagName !== "INPUT") {
         return;
       }
 
       e.target.parentNode.classList.remove("green-line");
     });
-
-    // const contentBoxes = document.querySelectorAll(`.${CONTENT_BOX_SELECTOR} > inpput`);
-
-    // Array.from(contentBoxes).forEach((contentBox) => {
-    // contentBox.addEventListener('focusin', (e) => { this._focusIn(e) })
-    // contentBox.addEventListener('focusout', (e) => { this._focusOut(e) })
-    // })
 
     this.idInput.addEventListener("click", (e) => {
       console.log(e.target.value);
@@ -267,6 +256,21 @@ export default class Join {
       this.agreementButton.checked = true;
       this.detailAgreementContainer.classList.remove("_visible");
       this.detailAgreementContainer.classList.add("_hide");
+    });
+
+    document.querySelector(".init-content").addEventListener("click", (e) => {
+      const inputs = document.querySelectorAll(`${CONTENT_BOX_SELECTOR} input`);
+      const selects = document.querySelectorAll(
+        `${CONTENT_BOX_SELECTOR} select`
+      );
+
+      inputs.forEach((el) => {
+        el.value = "";
+      });
+
+      this.agreementButton.checked = false;
+      selects[0].value = "january";
+      selects[1].value = "gender";
     });
   }
 
