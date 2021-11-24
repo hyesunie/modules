@@ -272,6 +272,10 @@ export default class Join {
       selects[0].value = "january";
       selects[1].value = "gender";
     });
+
+    document.querySelector("form.join").addEventListener("submit", (e) => {
+      console.log(e.target);
+    });
   }
 
   createMessageElement(className, parentNode) {
