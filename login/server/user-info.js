@@ -26,7 +26,7 @@ class UserInfo {
   }
 
   _setUserMap(newUserMap) {
-    this.userMap = [this.userMap, ...newUserMap];
+    this.userMap = [...newUserMap];
   }
 
   _readUserMap() {
