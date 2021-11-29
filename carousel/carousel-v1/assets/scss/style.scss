@@ -1,0 +1,67 @@
+@import "./reset.scss";
+@import "./_variable.scss";
+
+html {
+  font-size: 10px;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  font-size: 10rem;
+  height: 8vh;
+  align-items: center;
+  justify-content: center;
+
+  * {
+    height: 100%;
+    margin: 0;
+    padding: 0.25rem;
+  }
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.carousel {
+  width: 50vw;
+}
+
+.carousel__button {
+  position: absolute;
+  z-index: 2;
+  input[type="button"] {
+    font-size: 30rem;
+    border: none;
+    background: none;
+  }
+}
+
+// .carousel__slide {
+
+// }
+
+.carousel__slide__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 10rem;
+  top: 8vh;
+  opacity: 0;
+}
+
+.carousel__slide__img > img {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__slide__img[data-active] {
+  opacity: 1;
+}
+
+// .carousel {
+// }
