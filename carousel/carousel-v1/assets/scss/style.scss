@@ -1,0 +1,84 @@
+@import "./reset.scss";
+@import "./_variable.scss";
+
+html {
+  font-size: 10px;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  font-size: 10rem;
+  height: 8vh;
+  align-items: center;
+  justify-content: center;
+
+  * {
+    height: 100%;
+    margin: 0;
+    padding: 0.25rem;
+  }
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.carousel {
+  width: 50%;
+}
+
+.carousel__button {
+  position: absolute;
+  z-index: 2;
+  top: 35vh;
+  input[type="button"] {
+    z-index: 4;
+    font-size: 20rem;
+    border: none;
+    padding: 5rem;
+    background: none;
+  }
+}
+
+.carousel__button.pre {
+  left: 12.6rem;
+}
+
+.carousel__button:hover {
+  background-color: grey;
+  opacity: 0.4;
+}
+
+.carousel__button.next {
+  left: 34.6vw;
+}
+// .carousel__slide {
+
+// }
+
+.carousel__slide__img {
+  position: absolute;
+  width: 30vw;
+  height: 50vh;
+  inset: 0.2vw;
+  top: 15vh;
+  left: 5vw;
+  opacity: 0;
+}
+
+.carousel__slide__img > img {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel__slide__img[data-active] {
+  opacity: 1;
+}
+
+// .carousel {
+// }
