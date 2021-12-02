@@ -1,32 +1,43 @@
 function main() {
-  const slides = [...document.querySelectorAll(".carousel__slide__img")];
+  const imgSlides = [...document.querySelectorAll(".carousel__slide__img")];
+  const textSlides = [...document.querySelectorAll(".carousel__slide__text")];
   const preBtn = document.querySelector(".pre");
   const nextBtn = document.querySelector(".next");
 
   preBtn.addEventListener("click", (e) => {
-    const currnetSlide = slides.find((e) => e.matches("[data-active]"));
-    const existPre = currnetSlide.previousElementSibling ? true : false;
+    const currnetImgSlide = imgSlides.find((e) => e.matches("[data-active]"));
+    const currentTextSlide = textSlides.find((e) => e.matches("[data-active]"));
 
-    delete currnetSlide.dataset.active;
+    const existPre = currnetImgSlide.previousElementSibling ? true : false;
+
+    delete currnetImgSlide.dataset.active;
+    delete currentTextSlide.dataset.active;
 
     if (existPre) {
-      currnetSlide.previousElementSibling.dataset.active = true;
+      currnetImgSlide.previousElementSibling.dataset.active = true;
+      currentTextSlide.previousElementSibling.dataset.active = true;
       return;
     }
-    currnetSlide.parentNode.lastElementChild.dataset.active = true;
+    currnetImgSlide.parentNode.lastElementChild.dataset.active = true;
+    currentTextSlide.parentNode.lastElementChild.dataset.active = true;
   });
 
   nextBtn.addEventListener("click", (e) => {
-    const currnetSlide = slides.find((e) => e.matches("[data-active]"));
-    const existNext = currnetSlide.nextElementSibling ? true : false;
+    const currnetImgSlide = imgSlides.find((e) => e.matches("[data-active]"));
+    const currentTextSlide = textSlides.find((e) => e.matches("[data-active]"));
+    const existNext = currnetImgSlide.nextElementSibling ? true : false;
 
-    delete currnetSlide.dataset.active;
+    delete currnetImgSlide.dataset.active;
+    delete currentTextSlide.dataset.active;
 
     if (existNext) {
-      currnetSlide.nextElementSibling.dataset.active = true;
+      currnetImgSlide.nextElementSibling.dataset.active = true;
+      currentTextSlide.nextElementSibling.dataset.active = true;
+
       return;
     }
-    currnetSlide.parentNode.firstElementChild.dataset.active = true;
+    currnetImgSlide.parentNode.firstElementChild.dataset.active = true;
+    currentTextSlide.parentNode.firstElementChild.dataset.active = true;
   });
 }
 
