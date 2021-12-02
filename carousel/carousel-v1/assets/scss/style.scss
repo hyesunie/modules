@@ -1,6 +1,9 @@
 @import "./reset.scss";
 @import "./_variable.scss";
-
+// @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Myeongjo&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 html {
   font-size: 10px;
 }
@@ -26,16 +29,16 @@ main {
 }
 
 .carousel {
-  width: 50%;
+  width: 100%;
 }
 
 .carousel__button {
   position: absolute;
   z-index: 2;
-  top: 35vh;
+  top: 37vh;
   input[type="button"] {
     z-index: 4;
-    font-size: 20rem;
+    font-size: 15rem;
     border: none;
     padding: 5rem;
     background: none;
@@ -43,7 +46,7 @@ main {
 }
 
 .carousel__button.pre {
-  left: 12.6rem;
+  left: 8vw;
 }
 
 .carousel__button:hover {
@@ -52,7 +55,7 @@ main {
 }
 
 .carousel__button.next {
-  left: 34.6vw;
+  left: 36vw;
 }
 // .carousel__slide {
 
@@ -62,21 +65,47 @@ main {
   position: absolute;
   width: 30vw;
   height: 50vh;
-  inset: 0.2vw;
-  top: 15vh;
-  left: 5vw;
+  inset: 0;
+  top: 27vh;
+  left: 14vw;
   opacity: 0;
+  border-radius: 70px;
 }
 
 .carousel__slide__img > img {
   margin: 0;
-  width: 100%;
-  height: 100%;
+  width: 20vw;
+  height: 30vh;
+  box-shadow: 20px 20px 10px gray;
   object-fit: cover;
   object-position: center;
 }
 
 .carousel__slide__img[data-active] {
+  opacity: 1;
+}
+
+.carousel__slide__text {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  top: 29vh;
+  right: 3vw;
+  // font-size: 10rem;
+  opacity: 0;
+  h1 {
+    font-size: 13rem;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1.3rem;
+  }
+  p {
+    font-size: 8rem;
+    line-height: 13rem;
+    font-family: "Gowun Dodum", sans-serif;
+  }
+}
+
+.carousel__slide__text[data-active] {
   opacity: 1;
 }
 
