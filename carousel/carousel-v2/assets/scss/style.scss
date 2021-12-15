@@ -28,30 +28,30 @@ header {
 header h1 {
   display: inline;
   padding: 3rem;
-  // padding-top: 1rem;
-}
 
-header h1:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  border-radius: 3rem;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 3rem;
+  }
 }
 
 main {
   display: flex;
   flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: 100%;
 }
 
 article.subject {
   display: flex;
-  height: 40vh;
-  align-items: flex-start;
-  // flex-direction: row;
-  padding-left: 15vw;
-  padding-right: 15vw;
+  margin: 1em;
+  width: 60%;
+  height: 30%;
   justify-content: center;
   align-items: center;
   overflow: visible;
@@ -70,7 +70,7 @@ article.subject {
   display: flex;
   flex-direction: column;
   width: 70%;
-  height: 60%;
+  height: 80%;
   background: rgb(34, 193, 195);
   background: linear-gradient(
     0deg,
@@ -83,17 +83,17 @@ article.subject {
   justify-content: center;
   box-shadow: 7px 5px 5px rgb(219, 219, 213);
   margin: 2rem;
-}
 
-.subject__slide:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
 }
 
 .click {
   width: 110%;
-  height: 70%;
+  height: 90%;
   background: rgb(8, 167, 170);
   background: linear-gradient(
     0deg,
@@ -122,7 +122,9 @@ article.subject {
   height: 1rem;
   border-radius: 50%;
   background-color: rgb(249, 234, 253);
-  z-index: 1;
+  &:hover {
+    background-color: rgb(239, 181, 255);
+  }
 }
 
 .subject__slide h2 {
@@ -130,18 +132,28 @@ article.subject {
 }
 
 article.content {
-  position: relative;
-  background-color: green;
-  top: 2vh;
-  left: 10vw;
-  width: 80vw;
-  height: 40vh;
+  margin: 1em;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 40%;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-wrapper {
+  // position: relative;
+  display: flex;
+  flex: 5;
+  border: solid;
+  width: 70%;
+  height: 90%;
   overflow: hidden;
 }
 
-.content-container {
-  // position: relative;
+.content__slide-wrapper {
   display: flex;
+  flex-direction: row;
   width: 100%;
   height: 100%;
   float: left;
@@ -153,17 +165,34 @@ div.content__slide {
   flex: 0 0 100%;
 }
 
-article.content-button-container {
-  position: relative;
-  top: 1vh;
-}
-
-.pre-button {
-  z-index: 1;
-  left: 8vw;
-}
-
+.pre-button,
 .next-button {
-  z-index: 1;
-  right: 7vw;
+  flex: 0.5;
+  display: flex;
+  width: 40%;
+  height: 25%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3rem;
+  margin: 2rem;
+  color: rgb(248, 222, 27);
+  transition-duration: 1s;
+  transition-property: background-color;
+
+  h2 {
+    color: inherit;
+    font-size: 6em;
+    text-align: center;
+    width: fit-content;
+    padding-bottom: 0.2em;
+  }
+
+  &:hover {
+    background-color: rgb(129, 73, 145);
+    opacity: 0.5;
+  }
+
+  :hover {
+    color: white;
+  }
 }
