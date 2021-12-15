@@ -6,7 +6,9 @@ const SELECTOR = {
   SUBJECT_BUTTON_CONTAINER: "subject-button-container",
   CONTENT_PRE_BUTTON: "pre-button",
   CONTENT_NEXT_BUTTON: "next-button",
-  CONTENT_SLIDE_CONTAINER: "content-container",
+  CONTENT_WRAPPER: "content-wrapper",
+  CONTENT_SLIDE_WRAPPER: "content__slide-wrapper",
+  CONTENT_SLIDE: "content__slide",
 };
 
 export default SELECTOR;
