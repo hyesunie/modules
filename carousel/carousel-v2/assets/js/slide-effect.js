@@ -28,7 +28,6 @@ export default class SlideEffect {
         .clientWidth,
     };
 
-    console.log(this.slideInfo.width);
     this.init();
 
     this.subscribeEvent();
@@ -70,6 +69,8 @@ export default class SlideEffect {
   }
 
   subscribeEvent() {
+    window.addEventListener("resize", (e) => {});
+
     const subjectContainer = document.querySelector(`.${SELECTOR.SUBJECT}`);
     subjectContainer.addEventListener("click", (e) => {
       this.onClickSubjectContainer(e);
@@ -107,11 +108,19 @@ export default class SlideEffect {
 
     this._visibleInnerButton(clickedElement);
     this._expandSubject(clickedElement);
+
+    const nextSlide = clickedElement
+      .querySelector(`.${SELECTOR.SUBJECT_BUTTON_CONTAINER} div`)
+      .getAttribute("id");
+
+    this._slide(nextSlide - this._getSlideInfo().currentSlide);
   }
 
   onClickNextButton(e) {
     const nextSlide = document.querySelector(
-      `.${SELECTOR.SUBJECT_CONTAINER} [id="${this.slideInfo.currentSlide + 1}"]`
+      `.${SELECTOR.SUBJECT_CONTAINER} [id="${
+        this._getSlideInfo().currentSlide + 1
+      }"]`
     ).parentElement.parentElement;
 
     nextSlide.click();
@@ -120,7 +129,9 @@ export default class SlideEffect {
 
   onClickPreButton(e) {
     const preSlide = document.querySelector(
-      `.${SELECTOR.SUBJECT_CONTAINER} [id="${this.slideInfo.currentSlide - 1}"]`
+      `.${SELECTOR.SUBJECT_CONTAINER} [id="${
+        this._getSlideInfo().currentSlide - 1
+      }"]`
     ).parentElement.parentElement;
 
     preSlide.click();
@@ -130,7 +141,7 @@ export default class SlideEffect {
   onClickInnerButton(e) {
     const nextSlide = e.target.getAttribute("id");
 
-    this._slide(nextSlide - this.slideInfo.currentSlide);
+    this._slide(nextSlide - this._getSlideInfo().currentSlide);
   }
 
   _expandSubject(targetElement) {
@@ -171,11 +182,13 @@ export default class SlideEffect {
       `.${SELECTOR.CONTENT_SLIDE_CONTAINER}`
     );
 
-    const nextSlide = this.slideInfo.currentSlide + count;
+    const newSlideInfo = this._getSlideInfo();
+    const nextSlide = newSlideInfo.currentSlide + count;
     const offset = -(nextSlide - 1) * this.slideInfo.width;
-    console.log(offset);
 
-    this.slideInfo.currentSlide = nextSlide;
+    newSlideInfo.currentSlide = nextSlide;
+
+    this._setSlideInfo(newSlideInfo);
     contentSlideContainer.style.transform = `translate3d(${offset}px,0,0)`;
   }
 
@@ -185,5 +198,13 @@ export default class SlideEffect {
 
   _setSubjectInfo(newSubjectInfo) {
     this.subjectInfo = { ...newSubjectInfo };
+  }
+
+  _getSlideInfo() {
+    return { ...this.slideInfo };
+  }
+
+  _setSlideInfo(newSlideInfo) {
+    this.slideInfo = { ...newSlideInfo };
   }
 }
