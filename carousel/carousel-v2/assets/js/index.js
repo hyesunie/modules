@@ -1,4 +1,4 @@
-import SlideEffect from "./slide.js";
+import SlideEffect from "./slide-effect.js";
 
 function main() {
   const slideEffect = new SlideEffect();

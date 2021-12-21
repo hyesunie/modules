@@ -107,7 +107,7 @@ article.subject {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.subject-button-container {
+.subject__button-container {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -115,7 +115,7 @@ article.subject {
   justify-content: center;
 }
 
-.subject__slide-button {
+.subject__inner-button {
   margin: 0.5rem;
   margin-top: 4rem;
   width: 1rem;
@@ -125,6 +125,10 @@ article.subject {
   &:hover {
     background-color: rgb(239, 181, 255);
   }
+}
+
+.hidden {
+  display: none;
 }
 
 .subject__slide h2 {
@@ -141,7 +145,7 @@ article.content {
   justify-content: center;
 }
 
-.content-wrapper {
+.content-container {
   // position: relative;
   display: flex;
   flex: 5;
@@ -151,7 +155,7 @@ article.content {
   overflow: hidden;
 }
 
-.content__slide-wrapper {
+.content__slide-container {
   display: flex;
   flex-direction: row;
   width: 100%;
